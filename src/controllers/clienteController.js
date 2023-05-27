@@ -1,8 +1,8 @@
-const select = require('../services/select')
+const clienteServices = require('../services/clienteServices.js')
 
-const postusuario = async (req,res,next) =>{
+const postcliente = async (req,res,next) =>{
     try{
-        await select.postusuario(req.body)
+        await clienteServices.postcliente(req.body)
         .then(ret => res.status(201).send(ret))
         .catch(err => res.status(500).send(err))
     }catch(err){
@@ -10,37 +10,37 @@ const postusuario = async (req,res,next) =>{
     }
 }                                                                                                                                                                                   
 
-const getusuario = async(req,res,next) => {
-    await select.getusuario()
+const getcliente = async(req,res,next) => {
+    await clienteServices.getcliente()
         .then(ret => res.status(201).send(ret.rows))
         .catch(err => res.status(500).send(err)) 
 }
 
-const deleteusuario = async(req,res,next) => {
-    await select.deleteusuario(req.params)
+const deletecliente = async(req,res,next) => {
+    await clienteServices.deletecliente(req.params)
         .then(ret => res.status(201).send(ret))
         .catch(err => res.status(500).send(err)) 
 }
 
-const putusuario = async(req,res,next)=>{
+const putcliente = async(req,res,next)=>{
     let params = req.body
     params.id = req.params.id
-    await select.putusuario(params)
+    await clienteServices.putcliente(params)
     .then(ret => res.status(201).send(ret))
     .catch(err => res.status(500).send(err))
 }
 
 
-const patchusuario = async(req,res,next)=>{
+const patchcliente = async(req,res,next)=>{
     let params = req.body
     params.id = req.params.id
-    await select.patchusuario(params)
+    await clienteServices.patchcliente(params)
     .then(ret => res.status(201).send(ret))
     .catch(err => res.status(500).send(err))
 }
 
-module.exports.postusuario = postusuario
-module.exports.getusuario = getusuario
-module.exports.deleteusuario = deleteusuario
-module.exports.patchusuario = patchusuario
-module.exports.putusuario = putusuario
+module.exports.postcliente = postcliente
+module.exports.getcliente = getcliente
+module.exports.deletecliente = deletecliente
+module.exports.patchcliente = patchcliente
+module.exports.putcliente = putcliente
