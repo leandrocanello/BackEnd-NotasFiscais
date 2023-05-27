@@ -1,4 +1,4 @@
-const select = require('../database/select')
+const select = require('../services/select')
 
 const postusuario = async (req,res,next) =>{
     try{
