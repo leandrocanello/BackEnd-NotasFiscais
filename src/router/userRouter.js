@@ -1,9 +1,36 @@
 const userController = require('../controllers/userController');
 
 module.exports = (app) => {
-    app.get('/usuario', userController.getusuario)
-    app.post('/usuario', userController.postusuario)
-    app.delete('/usuario/:id', userController.deleteusuario)
-    app.put('/usuario/:id', userController.putusuario)
-    app.patch('/usuario/:id', userController.patchusuario)
+    app.get('/usuario', userController.getusuario
+            /* #swagger.tags = ['Usuario']
+       #swagger.summary = 'Busca lista de Usuario'         
+    */)
+    app.post('/usuario', userController.postusuario
+            /* #swagger.tags = ['Usuario']
+       #swagger.summary = 'Insere Usuario'  
+         #swagger.parameters['json'] = {
+         in: 'body',
+         description: 'Dados para inserir um Usuario',
+         required: 'true',
+         type: 'json',
+         schema:{
+            usuario: "NOME",
+            senha: "SENHA",
+            sexo: "I",
+            setor: "ADM"
+         }
+       }       
+    */)
+    app.delete('/usuario/:id', userController.deleteusuario
+            /* #swagger.tags = ['Usuario']
+       #swagger.summary = 'Deleta um Usuario, de acordo com o id pasado por parametro'         
+    */)
+    app.put('/usuario/:id', userController.putusuario
+            /* #swagger.tags = ['Usuario']
+       #swagger.summary = 'Atualiza o registro desejdo de um Usuario, de acordo com o id passado por parametro'         
+    */)
+    app.patch('/usuario/:id', userController.patchusuario
+           /* #swagger.tags = ['Usuario']
+       #swagger.summary = 'Atualiza todo registro de um Usuario, de acordo com o id passado por parametro'         
+    */)
 }

@@ -1,0 +1,1466 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "API FINANCEIRO",
+    "description": "DOCUMENTAÇÃO DA API FINANCEIRA"
+  },
+  "host": "localhost:3000",
+  "basePath": "",
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/usuario": {
+      "get": {
+        "tags": [
+          "Usuario"
+        ],
+        "summary": "Busca lista de Usuario",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Usuario"
+        ],
+        "summary": "Insere Usuario",
+        "description": "",
+        "parameters": [
+          {
+            "name": "json",
+            "in": "body",
+            "description": "Dados para inserir um Usuario",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "usuario": {
+                  "type": "string",
+                  "example": "NOME"
+                },
+                "senha": {
+                  "type": "string",
+                  "example": "SENHA"
+                },
+                "sexo": {
+                  "type": "string",
+                  "example": "I"
+                },
+                "setor": {
+                  "type": "string",
+                  "example": "ADM"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      }
+    },
+    "/usuario/{id}": {
+      "delete": {
+        "tags": [
+          "Usuario"
+        ],
+        "summary": "Deleta um Usuario, de acordo com o id pasado por parametro",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Usuario"
+        ],
+        "summary": "Atualiza o registro desejdo de um Usuario, de acordo com o id passado por parametro",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Usuario"
+        ],
+        "summary": "Atualiza todo registro de um Usuario, de acordo com o id passado por parametro",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      }
+    },
+    "/produto": {
+      "get": {
+        "tags": [
+          "Produto"
+        ],
+        "summary": "Busca lista de Produto",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Produto"
+        ],
+        "summary": "Insere Produto",
+        "description": "",
+        "parameters": [
+          {
+            "name": "json",
+            "in": "body",
+            "description": "Dados para inserir um Produto",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "descricao": {
+                  "type": "string",
+                  "example": "EXEMPLO"
+                },
+                "cor": {
+                  "type": "string",
+                  "example": "AZUL"
+                },
+                "largura": {
+                  "type": "number",
+                  "example": 10
+                },
+                "altura": {
+                  "type": "number",
+                  "example": 20
+                },
+                "comprimento": {
+                  "type": "number",
+                  "example": 40
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      }
+    },
+    "/produto/{id}": {
+      "delete": {
+        "tags": [
+          "Produto"
+        ],
+        "summary": "Deleta um Produto, de acordo com o id pasado por parametro",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Produto"
+        ],
+        "summary": "Atualiza o registro desejdo de um Produto, de acordo com o id passado por parametro",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Produto"
+        ],
+        "summary": "Atualiza todo registro de um Produto, de acordo com o id passado por parametro",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      }
+    },
+    "/franquia": {
+      "get": {
+        "tags": [
+          "Franquia"
+        ],
+        "summary": "Busca lista de Franquia",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Franquia"
+        ],
+        "summary": "Insere Franquia",
+        "description": "",
+        "parameters": [
+          {
+            "name": "json",
+            "in": "body",
+            "description": "Dados para inserir uma Franquia",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "idendereco": {
+                  "type": "number",
+                  "example": 1
+                },
+                "idcliente": {
+                  "type": "number",
+                  "example": 1
+                },
+                "numero": {
+                  "type": "number",
+                  "example": 1
+                },
+                "cnpj": {
+                  "type": "string",
+                  "example": "00000-00/00"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "exemploemail@gmail.com"
+                },
+                "fantasia": {
+                  "type": "string",
+                  "example": "EXEMPLO"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      }
+    },
+    "/franquia/{id}": {
+      "delete": {
+        "tags": [
+          "Franquia"
+        ],
+        "summary": "Deleta uma Franquia, de acordo com o id pasado por parametro",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Franquia"
+        ],
+        "summary": "Atualiza o registro desejdo de uma Franquia, de acordo com o id passado por parametro",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Franquia"
+        ],
+        "summary": "Atualiza todo registro de uma Franquia, de acordo com o id passado por parametro",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      }
+    },
+    "/notasaida": {
+      "get": {
+        "tags": [
+          "Nota de Saida"
+        ],
+        "summary": "Busca lista de Nota de Saida",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Nota de Saida"
+        ],
+        "summary": "Insere Nota de Saida",
+        "description": "",
+        "parameters": [
+          {
+            "name": "json",
+            "in": "body",
+            "description": "Dados para inserir um Endereço",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "idestadonota": {
+                  "type": "number",
+                  "example": 1
+                },
+                "numeronf": {
+                  "type": "string",
+                  "example": "122983765"
+                },
+                "valortotal": {
+                  "type": "number",
+                  "example": 200
+                },
+                "dataemisao": {
+                  "type": "string",
+                  "example": "12.02.2022"
+                },
+                "idcliente": {
+                  "type": "number",
+                  "example": 1
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      }
+    },
+    "/notasaida/{id}": {
+      "delete": {
+        "tags": [
+          "Nota de Saida"
+        ],
+        "summary": "Deleta uma Nota de Saida, de acordo com o id pasado por parametro",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Nota de Saida"
+        ],
+        "summary": "Atualiza o registro desejdo de uma Nota de Saida, de acordo com o id passado por parametro",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Nota de Saida"
+        ],
+        "summary": "Atualiza todo registro de uma Nota de Saida, de acordo com o id passado por parametro",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      }
+    },
+    "/notaentrada": {
+      "get": {
+        "tags": [
+          "Nota de Entrada"
+        ],
+        "summary": "Busca lista de Nota de Entrada",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Nota de Entrada"
+        ],
+        "summary": "Insere Nota de Entrada",
+        "description": "",
+        "parameters": [
+          {
+            "name": "json",
+            "in": "body",
+            "description": "Dados para inserir um Endereço",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "idestadonota": {
+                  "type": "number",
+                  "example": 1
+                },
+                "numeronf": {
+                  "type": "string",
+                  "example": "122983765"
+                },
+                "valortotal": {
+                  "type": "number",
+                  "example": 200
+                },
+                "dataemisao": {
+                  "type": "string",
+                  "example": "12.02.2022"
+                },
+                "idfornecedor": {
+                  "type": "number",
+                  "example": 1
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      }
+    },
+    "/notaentrada/{id}": {
+      "delete": {
+        "tags": [
+          "Nota de Entrada"
+        ],
+        "summary": "Deleta uma Nota de Entrada, de acordo com o id pasado por parametro",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Nota de Entrada"
+        ],
+        "summary": "Atualiza o registro desejdo de uma Nota de Entrada, de acordo com o id passado por parametro",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Nota de Entrada"
+        ],
+        "summary": "Atualiza todo registro de uma Nota de Entrada, de acordo com o id passado por parametro",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      }
+    },
+    "/fornecedor": {
+      "get": {
+        "tags": [
+          "Fornecedor"
+        ],
+        "summary": "Busca lista de Fornecedor",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Fornecedor"
+        ],
+        "summary": "Insere Fornecedor",
+        "description": "",
+        "parameters": [
+          {
+            "name": "json",
+            "in": "body",
+            "description": "Dados para inserir um Fornecedor",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "idendereco": {
+                  "type": "number",
+                  "example": 1
+                },
+                "idcliente": {
+                  "type": "number",
+                  "example": 1
+                },
+                "numero": {
+                  "type": "number",
+                  "example": 1
+                },
+                "cnpj": {
+                  "type": "string",
+                  "example": "00000-00/00"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "exemploemail@gmail.com"
+                },
+                "fantasia": {
+                  "type": "string",
+                  "example": "EXEMPLO"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      }
+    },
+    "/fornecedor/{id}": {
+      "delete": {
+        "tags": [
+          "Fornecedor"
+        ],
+        "summary": "Deleta um Fornecedor, de acordo com o id pasado por parametro",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Fornecedor"
+        ],
+        "summary": "Atualiza o registro desejdo de um Fornecedor, de acordo com o id passado por parametro",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Fornecedor"
+        ],
+        "summary": "Atualiza todo registro de um Fornecedor, de acordo com o id passado por parametro",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      }
+    },
+    "/estadonota": {
+      "get": {
+        "tags": [
+          "Nota por estado"
+        ],
+        "summary": "Busca lista de Nota po estado",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Nota por estado"
+        ],
+        "summary": "Insere Nota por estado",
+        "description": "",
+        "parameters": [
+          {
+            "name": "json",
+            "in": "body",
+            "description": "Dados para inserir uma nota por estado",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "numeronota": {
+                  "type": "number",
+                  "example": 0
+                },
+                "estad0": {
+                  "type": "string",
+                  "example": "Paraná"
+                },
+                "uf": {
+                  "type": "string",
+                  "example": "PR"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      }
+    },
+    "/estadonota/{id}": {
+      "delete": {
+        "tags": [
+          "Nota por estado"
+        ],
+        "summary": "Deleta uma Nota por estado, de acordo com o id pasado por parametro",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Nota por estado"
+        ],
+        "summary": "Atualiza o registro desejdo de uma Nota por estado, de acordo com o id passado por parametro",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Nota por estado"
+        ],
+        "summary": "Atualiza todo registro de uma Nota por estado, de acordo com o id passado por parametro",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      }
+    },
+    "/endereco": {
+      "get": {
+        "tags": [
+          "Endereço"
+        ],
+        "summary": "Busca lista de Endereço",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Endereço"
+        ],
+        "summary": "Insere Endereço",
+        "description": "",
+        "parameters": [
+          {
+            "name": "json",
+            "in": "body",
+            "description": "Dados para inserir um Endereço",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "rua": {
+                  "type": "string",
+                  "example": "NATAL"
+                },
+                "cidade": {
+                  "type": "string",
+                  "example": "Pinhalzinho"
+                },
+                "cep": {
+                  "type": "string",
+                  "example": "89870-000"
+                },
+                "bairro": {
+                  "type": "string",
+                  "example": "CENTRO"
+                },
+                "uf": {
+                  "type": "string",
+                  "example": "SC"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      }
+    },
+    "/endereco/{id}": {
+      "delete": {
+        "tags": [
+          "Endereço"
+        ],
+        "summary": "Deleta um Endereço, de acordo com o id pasado por parametro",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Endereço"
+        ],
+        "summary": "Atualiza o registro desejdo de um Endereço, de acordo com o id passado por parametro",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Endereço"
+        ],
+        "summary": "Atualiza todo registro de um Endereço, de acordo com o id passado por parametro",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      }
+    },
+    "/cliente": {
+      "get": {
+        "tags": [
+          "Cliente"
+        ],
+        "summary": "Busca lista de clietes",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Cliente"
+        ],
+        "summary": "Insere clietes",
+        "description": "",
+        "parameters": [
+          {
+            "name": "json",
+            "in": "body",
+            "description": "Dados para inserir um Cliente",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "fantasia": {
+                  "type": "string",
+                  "example": "EXEMPLO"
+                },
+                "cnpj": {
+                  "type": "string",
+                  "example": "00000-00/00"
+                },
+                "razaosocial": {
+                  "type": "string",
+                  "example": "EXEMPLO"
+                },
+                "idendereco": {
+                  "type": "number",
+                  "example": 2
+                },
+                "email": {
+                  "type": "string",
+                  "example": "exemploemail@gmail.com"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      }
+    },
+    "/cliente/{id}": {
+      "delete": {
+        "tags": [
+          "Cliente"
+        ],
+        "summary": "Deleta um clietes, de acordo com o id pasado por parametro",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Cliente"
+        ],
+        "summary": "Atualiza o registro desejdo de um cliente, de acordo com o id passado por parametro",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Cliente"
+        ],
+        "summary": "Atualiza todo registro de um cliente, de acordo com o id passado por parametro",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      }
+    }
+  }
+}
