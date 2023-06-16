@@ -4,6 +4,20 @@ module.exports = (app) => {
     app.get('/usuario', userController.getusuario
             /* #swagger.tags = ['Usuario']
        #swagger.summary = 'Busca lista de Usuario'         
+         #swagger.responses[201] = { description: 'Sucesso!',
+      schema: {
+        "total": 1,
+        "Usuario": [
+          {
+        "idusuario": 1,
+        "usuario": "Cristian",
+        "senha": "abc",
+        "sexo": "M",
+        "setor": "Administrativo"
+          }
+        ]
+      }
+    }     
     */)
     app.post('/usuario', userController.postusuario
             /* #swagger.tags = ['Usuario']

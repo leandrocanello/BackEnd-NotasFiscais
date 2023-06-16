@@ -3,7 +3,22 @@ const enderecoController = require('../controllers/enderecoController');
 module.exports = (app) => {
     app.get('/endereco', enderecoController.getendereco
         /* #swagger.tags = ['Endereço']
-       #swagger.summary = 'Busca lista de Endereço'         
+       #swagger.summary = 'Busca lista de Endereço'       
+        #swagger.responses[201] = { description: 'Sucesso!',
+    schema: {
+        "total": 1,
+        "Usuario": [
+          {
+        "idendereco": 1,
+        "rua": "Natal",
+        "cidade": "Pinhalzinho",
+        "cep": "89870-000",
+        "bairro": "Centro",
+        "uf": "SC"
+          }
+        ]
+      }
+    }     
     */)
     app.post('/endereco', enderecoController.postendereco
         /* #swagger.tags = ['Endereço']

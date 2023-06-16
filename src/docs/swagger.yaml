@@ -27,7 +27,47 @@
         "parameters": [],
         "responses": {
           "201": {
-            "description": "Criado"
+            "description": "Sucesso!",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "total": {
+                  "type": "number",
+                  "example": 1
+                },
+                "Usuario": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "idusuario": {
+                        "type": "number",
+                        "example": 1
+                      },
+                      "usuario": {
+                        "type": "string",
+                        "example": "Cristian"
+                      },
+                      "senha": {
+                        "type": "string",
+                        "example": "abc"
+                      },
+                      "sexo": {
+                        "type": "string",
+                        "example": "M"
+                      },
+                      "setor": {
+                        "type": "string",
+                        "example": "Administrativo"
+                      }
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
           },
           "500": {
             "description": "Erro Interno do Servidor"
@@ -1150,7 +1190,51 @@
         "parameters": [],
         "responses": {
           "201": {
-            "description": "Criado"
+            "description": "Sucesso!",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "total": {
+                  "type": "number",
+                  "example": 1
+                },
+                "Usuario": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "idendereco": {
+                        "type": "number",
+                        "example": 1
+                      },
+                      "rua": {
+                        "type": "string",
+                        "example": "Natal"
+                      },
+                      "cidade": {
+                        "type": "string",
+                        "example": "Pinhalzinho"
+                      },
+                      "cep": {
+                        "type": "string",
+                        "example": "89870-000"
+                      },
+                      "bairro": {
+                        "type": "string",
+                        "example": "Centro"
+                      },
+                      "uf": {
+                        "type": "string",
+                        "example": "SC"
+                      }
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
           },
           "500": {
             "description": "Erro Interno do Servidor"

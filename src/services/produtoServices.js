@@ -35,8 +35,8 @@ const sql_put =
             where id = $1
         `
 const putproduto = async(params)=>{
-    const {descricao,cor,largura,altura,comprimento} = params 
-    await db.query(sql_put,[descricao,cor,largura,altura,comprimento])
+    const {id,descricao,cor,largura,altura,comprimento} = params 
+    await db.query(sql_put,[id,descricao,cor,largura,altura,comprimento])
 }          
 
 
