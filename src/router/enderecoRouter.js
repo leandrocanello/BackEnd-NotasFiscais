@@ -3,22 +3,22 @@ const enderecoController = require('../controllers/enderecoController');
 module.exports = (app) => {
     app.get('/endereco', enderecoController.getendereco
         /* #swagger.tags = ['Endereço']
-       #swagger.summary = 'Busca lista de Endereço'       
-        #swagger.responses[201] = { description: 'Sucesso!',
-    schema: {
-        "total": 1,
-        "Usuario": [
+       #swagger.summary = 'Busca lista de Endereço' 
+       #swagger.responses[201] = { description: 'Sucesso!',
+      schema: 
           {
-        "idendereco": 1,
-        "rua": "Natal",
-        "cidade": "Pinhalzinho",
-        "cep": "89870-000",
-        "bairro": "Centro",
-        "uf": "SC"
+           "total":1, 
+           "Endereco":[
+            {
+            rua: "NATAL",
+            cidade: "Pinhalzinho",
+            cep: "89870-000",
+            bairro: "CENTRO",
+            uf: "SC"
           }
         ]
       }
-    }     
+    } 
     */)
     app.post('/endereco', enderecoController.postendereco
         /* #swagger.tags = ['Endereço']
@@ -44,9 +44,35 @@ module.exports = (app) => {
     app.put('/endereco/:id', enderecoController.putendereco
         /* #swagger.tags = ['Endereço']
        #swagger.summary = 'Atualiza o registro desejdo de um Endereço, de acordo com o id passado por parametro'         
-    */)
+       #swagger.parameters['json'] = {
+        in: 'body',
+        description: 'Dados que podem ser passados para atualizar totalmente um Endereço na resposta',
+        required: 'true',
+        type: 'json',
+        schema: {
+            rua: "NATAL",
+            cidade: "Pinhalzinho",
+            cep: "89870-000",
+            bairro: "CENTRO",
+            uf: "SC"
+        }
+    }
+       */)
     app.patch('/endereco/:id', enderecoController.patchendereco
         /* #swagger.tags = ['Endereço']
        #swagger.summary = 'Atualiza todo registro de um Endereço, de acordo com o id passado por parametro'         
-    */)
+       #swagger.parameters['json'] = {
+        in: 'body',
+        description: 'Dados que podem ser passados para atualizar totalmente um Endereço na resposta',
+        required: 'true',
+        type: 'json',
+        schema: {
+            rua: "NATAL",
+            cidade: "Pinhalzinho",
+            cep: "89870-000",
+            bairro: "CENTRO",
+            uf: "SC"
+        }
+        }
+       */)
 }   

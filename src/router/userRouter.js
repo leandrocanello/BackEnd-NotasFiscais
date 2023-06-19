@@ -3,21 +3,21 @@ const userController = require('../controllers/userController');
 module.exports = (app) => {
     app.get('/usuario', userController.getusuario
             /* #swagger.tags = ['Usuario']
-       #swagger.summary = 'Busca lista de Usuario'         
-         #swagger.responses[201] = { description: 'Sucesso!',
-      schema: {
-        "total": 1,
-        "Usuario": [
+       #swagger.summary = 'Busca lista de Usuario' 
+       #swagger.responses[201] = { description: 'Sucesso!',
+      schema: 
           {
-        "idusuario": 1,
-        "usuario": "Cristian",
-        "senha": "abc",
-        "sexo": "M",
-        "setor": "Administrativo"
+           "total":1, 
+           "Usuario":[
+            {
+            usuario: "Amanda",
+            senha: "Amanda123",
+            sexo: "I",
+            setor: "ADM"
           }
         ]
       }
-    }     
+    }          
     */)
     app.post('/usuario', userController.postusuario
             /* #swagger.tags = ['Usuario']
@@ -42,9 +42,33 @@ module.exports = (app) => {
     app.put('/usuario/:id', userController.putusuario
             /* #swagger.tags = ['Usuario']
        #swagger.summary = 'Atualiza o registro desejdo de um Usuario, de acordo com o id passado por parametro'         
-    */)
+       #swagger.parameters['json'] = {
+        in: 'body',
+        description: 'Dados que podem ser passados para atualizar totalmente um Usuario na resposta',
+        required: 'true',
+        type: 'json',
+        schema: {
+            usuario: "Amanda",
+            senha: "Amanda123",
+            sexo: "I",
+            setor: "ADM"
+        }
+    }
+       */)
     app.patch('/usuario/:id', userController.patchusuario
            /* #swagger.tags = ['Usuario']
        #swagger.summary = 'Atualiza todo registro de um Usuario, de acordo com o id passado por parametro'         
-    */)
+       #swagger.parameters['json'] = {
+        in: 'body',
+        description: 'Dados que podem ser passados para atualizar totalmente um Usuario na resposta',
+        required: 'true',
+        type: 'json',
+        schema: {
+            usuario: "Amanda",
+            senha: "Amanda123",
+            sexo: "I",
+            setor: "ADM"
+        }
+        }
+       */)
 }

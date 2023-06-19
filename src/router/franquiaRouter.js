@@ -3,7 +3,22 @@ const franquiaController = require('../controllers/franquiaController');
 module.exports = (app) => {
     app.get('/franquia', franquiaController.getfranquia
         /* #swagger.tags = ['Franquia']
-       #swagger.summary = 'Busca lista de Franquia'         
+       #swagger.summary = 'Busca lista de Franquia'  
+         #swagger.responses[201] = { description: 'Sucesso!',
+      schema: {
+           "total":1, 
+           "Franquia":[
+            {
+            idendereco: 1,
+            idcliente: 1,
+            numero: 1,
+            cnpj: "85.071.272/0001-35",
+            email: "cabeceirasdesol@gmail.com",
+            fantasia: "Cabeceiras de Sol",
+          }
+        ]
+      }
+    }
     */)
     app.post('/franquia', franquiaController.postfranquia
         /* #swagger.tags = ['Franquia']
@@ -30,9 +45,35 @@ module.exports = (app) => {
     app.put('/franquia/:id', franquiaController.putfranquia
         /* #swagger.tags = ['Franquia']
        #swagger.summary = 'Atualiza o registro desejdo de uma Franquia, de acordo com o id passado por parametro'         
-    */)
+       #swagger.parameters['json'] = {
+        in: 'body',
+        description: 'Dados que podem ser passados para atualizar totalmente uma Franquia na resposta',
+        required: 'true',
+        type: 'json',
+        schema: {
+            numero: 1,
+            cnpj: "85.071.272/0001-35",
+            email: "cabeceirasdesol@gmail.com",
+            fantasia: "Cabeceiras de Sol",
+        }
+    }   
+       */)
     app.patch('/franquia/:id', franquiaController.patchfranquia
         /* #swagger.tags = ['Franquia']
        #swagger.summary = 'Atualiza todo registro de uma Franquia, de acordo com o id passado por parametro'         
-    */)
+       #swagger.parameters['json'] = {
+        in: 'body',
+        description: 'Dados que podem ser passados para atualizar um Fornecedor na resposta',
+        required: 'true',
+        type: 'json',
+        schema: {
+            idendereco: 1,
+            idcliente: 1,
+            numero: 1,
+            cnpj: "85.071.272/0001-35",
+            email: "cabeceirasdesol@gmail.com",
+            fantasia: "Cabeceiras de Sol",
+        }
+    }
+       */)
 }
